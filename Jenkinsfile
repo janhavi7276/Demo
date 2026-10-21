@@ -5,7 +5,7 @@ pipeline {
     stage{'Build'} {
       environement { BUILD_MODE = 'production' }
       steps {
-        bat 'echo %APP-NAME% %BUILD_MODE%'
+        bat 'echo %APP_NAME% %BUILD_MODE%'
       }
     }
   }
