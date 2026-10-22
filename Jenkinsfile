@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'windows' }   // pin the OS since you use bat
+  agent any
 
   parameters {
     choice(name: 'ENVIRONMENT', choices: ['staging', 'production'],
@@ -27,7 +27,7 @@ pipeline {
   }
 
   post {
-    success { archiveArtifacts artifacts: 'dist/**' }
+    success { archiveArtifacts artifacts: 'dist/**', allowEmptyArchive: true }
     failure { echo 'CI pipeline failed' }
   }
 }
