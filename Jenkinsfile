@@ -10,18 +10,19 @@ pipeline {
     stage('Tests') {
       parallel {
         stage('Unit') {
-          steps { bat 'echo Unit tests' }
+          steps { sh 'echo Unit tests' }
         }
         stage('Integration') {
-          steps { bat 'echo Integration tests' }
+          steps { sh 'echo Integration tests' }
         }
       }
     }
 
     stage('Package') {
       steps {
+        sh 'ls -la'
         echo "Packaging for ${params.ENVIRONMENT}"
-        bat 'package.bat'
+        sh 'bash package.sh'
       }
     }
   }
