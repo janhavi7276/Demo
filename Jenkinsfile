@@ -6,11 +6,14 @@ pipeline {
   }
   stages {
     stage('Tests') {
-  parallel {
-    stage('Unit') { steps { bat 'echo Unit tests' } }
-    stage('Integration') { steps { bat 'echo Integration tests' } }
-  }
-}
-
+      parallel {
+        stage('Unit') {
+          steps { sh 'echo Unit tests' }
+        }
+        stage('Integration') {
+          steps { sh 'echo Integration tests' }
+        }
+      }
+    }
   }
 }
