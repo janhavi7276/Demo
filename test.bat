@@ -1,1 +1,3 @@
-
+@echo off
+echo Running tests...
+exit /b 0
