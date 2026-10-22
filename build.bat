@@ -1,1 +1,3 @@
-
+@echo off
+echo Building project...
+exit /b 0
