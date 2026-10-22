@@ -6,8 +6,8 @@ pipeline {
   }
   stage('Tests') {
     parallel {
-        stage('Units') {steps { bat 'echo Unit tests' } }
-        stage('Integration') {steps { bat 'echo Integration tests' } }
+        stage('Units') { steps { bat 'echo Unit tests' } }
+        stage('Integration') { steps { bat 'echo Integration tests' } }
     }
   }
 }
