@@ -11,8 +11,8 @@ pipeline {
       steps { input message: 'Deploy to production?' }
     }
     stage('Deploy') {
-      steps { bat "echo Deploy to ${params.ENVIRONMENT}" }
+      steps { bat "sh Deploy to ${params.ENVIRONMENT}" }
     }
   }
 }
-                                  }
+                                  
